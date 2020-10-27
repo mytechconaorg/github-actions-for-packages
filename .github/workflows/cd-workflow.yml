@@ -62,8 +62,7 @@ jobs:
     - name: Build and push Docker images
       uses: docker/build-push-action@v1
       with:
-        username: ${{ secrets.DOCKERUSERNAME }}
-        password: ${{ secrets.DOCKERPASSWORD}}
-        repository: jaboo9/github-actions-for-packages
-        tag_with_ref: true
-        tag_with_sha: true
+        username: ${{github.actor}}
+        password: ${{secrets.GITHUBTOKEN}}
+        registry: docker.pkg.github.com
+        repository: Jaboo9/github-actions-for-packages/tic-tac-toe
