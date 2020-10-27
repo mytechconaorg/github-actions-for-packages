@@ -62,7 +62,7 @@ jobs:
       uses: docker/build-push-action@v1
       with:
         username: ${{github.actor}}
-        password: ${{secrets.GITHUB_TOKEN}}
+        password: ${{secrets.GITHUBTOKEN}}
         registry: docker.pkg.github.com
         repository: Jaboo9/github-actions-for-packages/
         tag_with_sha: true
