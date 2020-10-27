@@ -52,17 +52,18 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
     - name: Download built artifact
       uses: actions/download-artifact@master
       with:
         name: webpack artifacts
         path: public
-    - name: Build container image
+
+    - name: Build and push Docker images
       uses: docker/build-push-action@v1
       with:
-        username: ${{github.actor}}
-        password: ${{secrets.GITHUB_TOKEN}}
-        registry: docker.pkg.github.com
-        repository: Jaboo9/github-actions-for-packages/tic-tac-toe
+        username: ${{ secrets.DOCKERUSERNAME }}
+        password: ${{ secrets.DOCKERPASSWORD}}
+        repository: jaboo9/github-actions-for-packages
+        tag_with_ref: true
         tag_with_sha: true
