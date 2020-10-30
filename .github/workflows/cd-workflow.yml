@@ -65,5 +65,5 @@ jobs:
         username: ${{github.actor}}
         password: ${{secrets.GITHUBTOKEN}}
         registry: docker.pkg.github.com
-        repository: Jaboo9/github-actions-for-packages/
+        repository: jaboo9/github-actions-for-packages/
         tag_with_sha: true
